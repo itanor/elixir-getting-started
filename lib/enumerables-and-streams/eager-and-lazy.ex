@@ -7,7 +7,9 @@ defmodule EagerAndLazy do
 
   # Stream module provides lazy operations
   def lazy_operations() do
+    10_000 |> Stream.map(&(&1 * 1))
   end
 end
 
 IO.inspect(EagerAndLazy.eager_operations())
+IO.inspect(EagerAndLazy.lazy_operations())
