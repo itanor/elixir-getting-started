@@ -18,14 +18,15 @@ defmodule Streams do
   end
 
   def file_stream() do
-    stream = File.stream!("/tmp/a")
+    File.stream!("/tmp/a")
   end
 
   def read_n_lines(stream, initial, n) do
     page = Enum.slice(stream, initial, n)
+
     if page != [] do
       IO.inspect(page)
-      read_n_lines(stream, initial+n, n)
+      read_n_lines(stream, initial + n, n)
     end
   end
 end
