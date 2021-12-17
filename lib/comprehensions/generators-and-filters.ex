@@ -58,4 +58,9 @@ defmodule Comprehensions do
 
     for part <- clothes, size <- sizes, do: {part, size}
   end
+
+  def uniq_option do
+    repeated_values = [1, 1, 2, 2, 3, 4, 5]
+    for n <- repeated_values, uniq: true, do: n * 2
+  end
 end
